@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+@import "global";
+
+
+.portalpnl{}
+.portalsidemenu{width:210px;background-color:var(--bg-color1);position:fixed;inset-inline-start:0;top:0;transition:.3s;color:#fff;
+    .logopnl{height:60px;flex:0 0 60px;border-bottom:1px solid #ffffff3d;
+        a{display:block;padding:.5rem;color:#fff}
+        svg{height:1.75rem;
+            &.icon{display:none}
+            /*.one{fill:#168039}.audit{fill:#45bf55}*/
+            .one,.audit{fill:#fff}
+        }
+    }
+    .cstmscrll{
+        &>div{
+            &:first-child{display:flex;flex-direction:column;}
+        }
+    }
+    .psmenu{padding:.5rem;
+        .mainbtn{position:relative;text-align:start;white-space:nowrap;
+            &:focus-visible{outline:none;}
+            &>div{flex-grow:1}
+            samp{margin-top:-2px}
+            samp,span{display:inline-block;vertical-align:middle}
+            span{line-height:1.2}
+            .arw{display:block;inset-inline-end:6px;top:15px;transition:.3s;}
+        }
+        &>.block{margin-bottom:.5rem;}
+        .mainbtn,.antialiased{color:#fff;&:hover{color:#ffffffd4}}
+        .mainbtn{border-radius:5px;&:hover,&.active{background-color:#cccccc26}&.openpnl{background-color:#cccccc26;border-radius:5px 5px 0 0}}
+        .antialiased.cnts{padding-inline-start:28px;background-color:#cccccc26;border-radius:0 0 5px 5px;margin-top:1px;}
+    }
+    main{flex:1 1}
+    footer{flex:0 0 50px;border-top:1px solid #ffffff3d}
+    .cstmscrll{
+        &>div{
+            &:last-child{
+                &>div{background-color:#ffffff33!important}
+            }
+        }
+    }
+    .mnusmllbtn{border-color:#ffffff91;color:#fff;&:focus{box-shadow:none}}
+}
+body.menuSmall{
+    .portalsidemenu{
+        .logopnl{
+            svg{&.big{display:none}&.icon{display:block;margin:0 auto}}
+        }
+    }  
+    .portalsidemenu{width:65px;
+        .psmenu{
+            .mainbtn{
+                &.openpnl{border-radius:5px}
+                span{display:none;}
+                samp{display:block;margin:0;svg{margin:0 auto;}}
+                samp.arw{display:none;}
+            }
+            .overflow-hidden{display:none!important}
+        }
+    }
+    .portalmainpnl{margin-inline-start:65px}
+    .mnusmllbtn{margin-inline-start:-12px;svg{transform:scaleX(-1)}}
+}
+.srchpnl{margin-inline-start:-30px}
+.menuSmall .srchpnl{margin-inline-start:-25px}
+
+.portalmainpnl{margin-inline-start:210px;transition:.5s}
+.portalmainhead{height:60px;border-bottom:1px solid #C9C9C9;
+    @apply flex items-center justify-between bg-white bg-prtlheader dark:text-gray-200 sticky top-0 px-1 lg:px-3
+}
+body.dark{
+    .portalmainhead{border-bottom-color:#ffffff21}
+}
+.srchpnl{width:42px;
+    button.closebtn{visibility:hidden}
+    &:not(.show){
+        input{padding-left:0;padding-right:0;opacity:0}
+    }
+    &.show{width:300px;
+        button.closebtn{visibility:visible}
+    }
+}
+.prthd{@apply flex justify-between flex-wrap items-center;
+    &>*{padding-bottom:.5rem}
+}
+.plsadd{border-color:var(--thmbg1);color:var(--thmbg1);&:hover{background-color:var(--thmbg1);color:#fff}
+    @apply block text-center disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none border hover:opacity-75 rounded-full w-7 h-7 text-base duration-300 dark:text-gray-300 dark:border-gray-300 dark:hover:bg-gray-300 dark:hover:text-gray-800;
+    svg{display:inline;}
+}
+.csttab{
+    li{width:auto!important;
+        @apply lg:min-w-[150px];
+    }
+    li.active{color:var(--thmbg1);
+        div.actbdr{border-color:var(--thmbg1)}
+    }
+}
+div.grid:has(div.cstmodal){overflow:auto}
+
+
+
+
+.react-responsive-modal-root{position:fixed;top:0;bottom:0;left:0;right:0;z-index:1000}
+.ondtOverlay{background:rgba(0,0,0,.5);position:fixed;top:0;bottom:0;left:0;right:0;z-index:-1}
+.react-responsive-modal-container{height:100%;outline:0;overflow-x:hidden;overflow-y:auto;text-align:center}
+.react-responsive-modal-containerCenter:after{width:0;height:100%;content:'';display:inline-block;vertical-align:middle}
+.react-responsive-modal-modal{max-width:800px;display:inline-block;text-align:left;vertical-align:middle;background:#ffffff;box-shadow:0 12px 15px 0 rgba(0,0,0,.25);margin:1.2rem;padding:1.2rem;position:relative;overflow-y:auto}
+.react-responsive-modal-closeButton{position:absolute;top:14px;right:14px;border:none;padding:0;cursor:pointer;background-color:transparent;display:flex}
+.ondtOverlay,.react-responsive-modal-container,.react-responsive-modal-modal{animation-fill-mode:forwards!important}
+@keyframes react-responsive-modal-overlay-in{0%{opacity:0}100%{opacity:1}}
+@keyframes react-responsive-modal-overlay-out{0%{opacity:1}100%{opacity:0}}
+@keyframes react-responsive-modal-modal-in{0%{transform:scale(0.96);opacity:0}100%{transform:scale(100%);opacity:1}}
+@keyframes react-responsive-modal-modal-out{0%{transform:scale(100%);opacity:1}100%{transform:scale(0.96);opacity:0}}
+.ondtModal{}
+
+
+
+
+
+/*------------------------As per theme--------------------------*/
+.bg-prtlheader{background-color:var(--bg-prtlhead-color1)!important}
+body.dark{
+   button.trnsp{
+    span.ripple{background-color:rgba(255,255,255,.2)!important;}
+   } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "en";
+@import "ar";
+@import "responsive";

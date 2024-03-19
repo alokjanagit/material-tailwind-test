@@ -1,0 +1,20 @@
+:root {--bg-color1:#3D6583;--bg-prtlhead-color1:#fff;--thmbg1:#26AE60;--thmbg1hvr:#116b38;}
+:root body.dark{--bg-color1:#1b394e;--bg-prtlhead-color1:#1b2f3d;}
+
+.redtheme {--bg-color1:#c34a4a;}
+body.dark.redtheme {--bg-color1:#701717;--bg-prtlhead-color1:#311d1d;}
+
+.greentheme {--bg-color1:#259546;}
+body.dark.greentheme {--bg-color1:#204d2d;--bg-prtlhead-color1:#243e2c;}
+
+
+body{font-size:1rem;
+    &.light{background-color:#fbfcfe;color:#04112A}
+    &.dark{background-color:#2a2b2e}
+}
+.thmbg1{background-color:var(--thmbg1);
+    &.hvr{&:hover{background-color:var(--thmbg1hvr)}}
+}
+.thmbg1fix{background-color:#26AE60}
+
+.iblk{@apply inline-block} .vm{@apply align-middle}

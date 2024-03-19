@@ -1,0 +1,20 @@
+body.ar{direction:rtl;
+
+.cstmscrll{
+    &>div{
+        &:first-child{margin-right:auto!important;margin-left:-17px!important}
+        &:last-child{right:auto!important;left:2px!important}
+    }
+}
+.portalsidemenu{
+    .psmenu{
+        .mainbtn:not(.openpnl){
+            .arw{transform: rotate(89deg)}
+        }
+    }
+}
+
+
+
+
+}
